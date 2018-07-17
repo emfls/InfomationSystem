@@ -1,0 +1,158 @@
+<HTML>
+
+<HEAD>
+    <TITLE></TITLE>
+    <meta charset="utf-8">
+    <script>
+        function add_row() {
+            var time = 7;
+            var classTime = -1;
+            var table = document.getElementById('bodySche');
+            var row = table.insertRow(table.rows.length); // 하단에 추가
+            var cT = ['0A', '0B', '1A', '1B', '2A', '2B', '3A', '3B', '4A', '4B', '5A', '5B', '6A', '6B', '7A', '7B', '8A', '8B', '9A', '9B', '10A', '10B', '11A', '11B', '12A', '12B', '13A', '13B', '14A', '14B', '15A', '15B', '16A'];
+
+            for (var i = 0; i < 30; i++) {
+                for (var j = 0; j < 8; j++) {
+                    var cell = row.insertCell(j);
+                    //시간 부분 구현
+                    if (j == 0) {
+                        if (i % 2 == 0) {
+                            cell.innerHTML = ++time + ":00";
+                        } else {
+                            cell.innerHTML = time + ":30";
+                        }
+                        cell.className = "time";
+                        //교시 부분 구현
+                    } else if (j == 1) {
+                        if (i % 2 == 0) {
+                            cell.innerHTML = ++classTime + "A";
+                        } else {
+                            cell.innerHTML = classTime + "B";
+                        }
+                        cell.className = "classTime";
+                        //시간표 구현
+                    } else {
+                        //시간표 넣을 쿼리
+                    }
+                }
+                row = table.insertRow(table.rows.length);
+            }
+        }
+
+    </script>
+
+    <!-- jquery, jspdf, html2canvas import-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+    <script src="js/html2canvas.js"></script>
+
+    <!-- pdf 파일 다운로드 구현
+        아직 미완성 -->
+    <script>
+        $(document).ready(function() {
+            $('#pdfBtn').click(function() {
+                html2canvas($('#print'), {
+                    onrendered: function(canvas) {
+                        var imgData = canvas.toDataURL('image/png');
+                        var doc = new jsPDF('p', 'mm', [297, 210]); //A4용지 크기
+                        doc.addImage(imgData, 'PNG', 10, 10, 190, 270);
+                        doc.save('시간표.pdf');
+                    }
+                });
+            });
+        });
+
+    </script>
+
+    <!-- 테이블 스타일 설정-->
+    <style>
+        body {
+            align-content: left;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        table th {
+            height: 45px;
+            background-color: aliceblue;
+        }
+        
+        table td {
+            height: 29px;
+            text-align: center;
+            word-break: break-all;
+        }
+        
+        table th {
+            background-color:
+        }
+        
+        .time,
+        .classTime {
+            background-color: aliceblue;
+        }
+        
+        button {
+            width: 100px;
+            height: 25px;
+            border-radius: 5%;
+            background-color: #eeeeee;
+            color: black;
+        }
+        /*프린트 영역 지정*/
+        
+        @media print {
+            nav {
+                display: none;
+            }
+        }
+
+    </style>
+
+</HEAD>
+
+<BODY onload="add_row()">
+    <!-- 네비게이션 바 구현 -->
+    <nav style="position: fixed">
+        <button id="pdfBtn">PDF 저장</button>
+        <button onclick="javascript:window.print()">인쇄</button>
+    </nav>
+
+    <!-- 시간표 구현 -->
+    <div id="print">
+
+        <table>
+            <tr>
+                <td>
+                    <H2 align=center>강의 시간표</H2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p align=left>[개인시간표조회] $year년도 $학기 $name</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="1px" style="table-layout:fixed" width=600>
+                        <thead>
+                            <th width=70>시간</th>
+                            <th width=50>교시</th>
+                            <th width=120>월</th>
+                            <th width=120>화</th>
+                            <th width=120>수</th>
+                            <th width=120>목</th>
+                            <th width=120>금</th>
+                            <th width=120>토</th>
+                        </thead>
+                        <tbody id="bodySche"></tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</BODY>
+
+</HTML>

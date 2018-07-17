@@ -1,0 +1,122 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>한국교통대 학사관리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Shadow Login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $('.toggle1').on('click', function(){
+               $('#proLogin').toggleClass('nonDisplay');
+               $('#stuLogin').toggleClass('nonDisplay');
+           });
+            $('.toggle2').on('click', function(){
+               $('#proLogin').toggleClass('nonDisplay');
+               $('#stuLogin').toggleClass('nonDisplay');
+           });
+        });
+    </script>
+    
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    
+    
+    <!-- Custom Theme files -->
+    <link href="../css/loginstyle.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    
+    <!-- //web font -->
+</head>
+<style>
+    .nonDisplay{
+        display: none;
+    }
+    
+    a:hover{
+        cursor: pointer;
+    }
+    </style>
+<body>
+    <!-- main -->
+    <div class="main-agileinfo slider ">
+        <div class="items-group">
+            <div class="item agileits-w3layouts">
+                <div class="block text main-agileits">
+                    <span class="circleLight"></span>
+                    
+                    <!-- login form -->
+                    <div id="stuLogin" class="login-form loginw3-agile">
+                        <div class="agile-row">
+                            <h1>Student</h1>
+                            <span class="login-agileits-bottom wthree">
+                                <h6><a class="toggle1">Are you Professor?</a></h6>
+                            </span>
+                            <div class="login-agileits-top">
+                                <form action="sessionLoginPro.jsp" method="post">	<!-- 세션 로그인을 담당하는 jsp 페이지 -->
+                                    <p>Student Number </p>
+                                    <input type="text" class="name" name="stuNum" required="" />
+                                    <p>Password</p>
+                                    <input type="password" class="password" name="stuPwd" required="" />
+                                    <label class="anim">
+										<input type="checkbox" class="checkbox">
+										<span> Remember me ?</span> 
+									</label>
+                                    <input type="submit" value="Login">
+                                </form>
+                            </div>
+                            <div class="login-agileits-bottom wthree">
+                                <h6><a href="#">Forgot password?</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="proLogin" class="login-form loginw3-agile nonDisplay">
+                        <div class="agile-row">
+                            <h1>Professor</h1>
+                            <span class="login-agileits-bottom wthree">
+                                <h6><a class="toggle2">Are you student?</a></h6>
+                            </span>
+                            <div class="login-agileits-top">
+                                <form action="professorLogin.jsp" method="post">
+                                    <p>Professor Number </p>
+                                    <input type="text" class="name" name="proNum" required="" />
+                                    <p>Password</p>
+                                    <input type="password" class="password" name="proPwd" required="" />
+                                    <label class="anim">
+										<input type="checkbox" class="checkbox">
+										<span> Remember me ?</span> 
+									</label>
+                                    <input type="submit" value="Login">
+                                </form>
+                            </div>
+                            <div class="login-agileits-bottom wthree">
+                                <h6><a href="#">Forgot password?</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="w3lsfooteragileits">
+                    <p> &copy; 2017 Shadow Login Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="=_blank">W3layouts</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+</body>
+</html>

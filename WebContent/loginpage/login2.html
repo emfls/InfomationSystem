@@ -1,0 +1,158 @@
+
+    
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>한국교통대 학사관리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="../js/jquery.bxslider.min.js"></script>
+
+    <link href="../css/loginstyle2.css" rel="stylesheet" type="text/css" media="all" />
+    
+<script>
+
+    
+    </script>
+    
+    <style>
+        
+*{margin: 0; padding: 0;}
+        
+        #wrapper {position: absolute; background-color: #501E20;
+    width:100%;
+    height: 300px; }
+        
+#header {position: relative;
+   background-color: #501E20;
+    width:100%;
+    height: 190px;
+    
+}
+
+
+}
+
+#content {
+    position: relative;
+   width:100%; height: 800;
+    background-color: cyan;
+    
+   
+    
+} 
+        .box1 {width:30%; height: 600px;  margin-top: 4em;  margin: 15px; float: left;}
+        .box2 {position: relative; width:35%; height: 600px;  margin-top: 3em;  margin-left: auto;float: left;}
+      
+        
+#footer { width: 100%; height:200px;
+   background-color: #501E20;
+    position: absolute;
+    clear: both;
+    z-index: -1;
+}
+       
+  
+
+#s_banner_wrap {width:100%; height:auto; position: absolute; margin:0px; 
+   
+        }
+    
+.banner {width:100%; height:800px;
+    background: url("../images/1.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;
+         animation: myfirst 15s infinite;
+        -moz-animation:myfirst 15s infinite;
+        -webkit-animation:myfirst 15s infinite;
+        -o-animation:myfirst 15s infinite;}
+
+    
+        
+        @keyframes myfirst
+        {
+            
+            20%{background: url("../images/1.jpg"); width: 100%; height: 800px; background-repeat: no-repeat; background-size: cover; background-position: center;}
+            
+            50%{background: url("../images/2.jpg"); width: 100%; height: 800px; background-repeat: no-repeat; background-size: cover; background-position: center;}
+            
+            90%{background: url("../images/3.jpg"); width: 100%; height: 800px; background-repeat: no-repeat; background-size: cover; background-position: center;}
+            
+            100%{background: url("../images/1.jpg"); width: 100%; height: 800px; background-repeat: no-repeat; background-size: cover; background-position: center;}
+        }
+        
+        
+</style>
+</head>
+
+<body>
+    <div id="wrapper">                <img src="../knutLogo.png" width="130" height="130" > 
+
+<!--         <div id="header" >  -->
+            
+<!--             <h2>Korea National University of Transportation</h2> -->
+            
+<!--             <ul class="bxslider"> -->
+<!--       <li class="banner"></li> -->
+    
+<!--     </ul> -->
+<!--         </div> -->
+       
+        <div id="content">
+            
+            <div class="box1"> </div>
+            <div class="box2">
+                
+                
+        
+            
+            <div class="item student">
+ 
+                
+
+                <div class="block text">
+                    
+                 
+                    
+                    <!-- login form -->
+                    <div id="stuLogin" class="login-form loginw3-agile">
+                        
+                        <div class="agile-row">
+                            <h1>로 그 인</h1>
+                            
+                            
+                            <div class="login-agileits-top">
+                                <form action="sessionLoginPro.jsp" method="post">
+                                    <!-- 세션 로그인을 담당하는 jsp 페이지 -->
+                                    
+                                    <p>아 이 디 </p>
+                                    <input type="text" class="name" name="stuNum" required="" placeholder="ex) 1244013" />
+                                    
+                                    <p>비밀번호</p>
+                                    
+                                    <input type="password" class="password" name="stuPwd" required="" placeholder="ex) ****" />
+                                    
+                                    <label class="anim">
+										<input type="checkbox" class="checkbox">
+                                        <span>아이디 자동 저장</span>
+									</label>
+                                    
+                                    <input type="submit" value="로   그   인">
+                                
+                                </form>
+                            </div>
+                            <div class="login-agileits-bottom">
+                                <h6><a href="#">비밀번호 찾기</a></h6>
+                            </div>
+                        </div>            
+                    </div>
+            </div>
+               
+      
+</body>
+                
+</html>
